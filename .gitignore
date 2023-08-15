@@ -1,0 +1,22 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+
+# IDE-specific files
+.vscode/
+
+# Miscellaneous
+*.npy
+*.pdf
+*.png
+*.html
+*.svg

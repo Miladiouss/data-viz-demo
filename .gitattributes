@@ -1,0 +1,9 @@
+*.pth filter=lfs
+*.ipynb filter=lfs
+*.png filter=lfs
+*.jpeg filter=lfs
+*.pdf filter=lfs
+*.svg filter=lfs
+*.fits filter=lfs
+*.pkl filter=lfs
+*.log filter=lfs
