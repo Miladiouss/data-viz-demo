@@ -19,39 +19,59 @@ def update_layout(fig: go.Figure):
     fig : plotly.graph_objects.Figure
         A plotly figure object
     """
+
+    # Set Font Family
     fig.layout.font.family = "Times New Roman"
-    fig.layout.width = 850
-    fig.layout.legend.bgcolor = "rgba(0, 0, 0, 0)"
     fig.layout.legend.font.family = "monospace"
-    fig.layout.legend.itemsizing = "constant"
+
+    # Set Font Size
     fig.layout.font.size = 20
+    fig.layout.title.font.size = fig.layout.font.size
+    fig.layout.xaxis.title.font.size = fig.layout.font.size
+    fig.layout.yaxis.title.font.size = fig.layout.font.size
+    fig.layout.legend.font.size = fig.layout.font.size - 3
+
+    # Configure Plot Size
+    fig.layout.width = 850
+    # Configure Colors
+    fig.layout.plot_bgcolor = "rgba(0, 0, 0, 0)"
+
+    # Configure Legend
+    fig.layout.legend.bgcolor = "rgba(0, 0, 0, 0)"
+    fig.layout.legend.itemsizing = "constant"
+    fig.layout.showlegend = True
+
+    # Set Margins
     fig.layout.margin.t = 75
     fig.layout.margin.b = 75
     fig.layout.margin.l = 75
     fig.layout.margin.r = 75
     fig.layout.margin.pad = 0
-    fig.layout.plot_bgcolor = "rgba(0, 0, 0, 0)"
-    fig.layout.showlegend = True
+
+    # Configure Axis Lines
     fig.layout.xaxis.linecolor = "black"
+    fig.layout.yaxis.linecolor = "black"
     fig.layout.xaxis.mirror = True
     fig.layout.xaxis.showline = True
-    fig.layout.xaxis.ticks = "inside"
-    fig.layout.yaxis.linecolor = "black"
     fig.layout.yaxis.mirror = True
     fig.layout.yaxis.showline = True
+    fig.layout.xaxis.zeroline = False
+    fig.layout.yaxis.zeroline = False
+
+    # Configure Ticks
+    fig.layout.xaxis.ticks = "inside"
     fig.layout.yaxis.ticks = "inside"
+    fig.layout.xaxis.minor.ticks = "inside"
+    fig.layout.yaxis.minor.ticks = "inside"
+    fig.layout.xaxis.minor.ticklen = 2
+    fig.layout.yaxis.minor.ticklen = 2
+
+    # Configure Grid
     fig.layout.xaxis.gridcolor = "rgba(0, 0, 0, .15)"
     fig.layout.yaxis.gridcolor = "rgba(0, 0, 0, .15)"
     fig.layout.xaxis.zerolinecolor = "rgba(0, 0, 0, .15)"
     fig.layout.yaxis.zerolinecolor = "rgba(0, 0, 0, .15)"
-    fig.layout.xaxis.zeroline = False
-    fig.layout.yaxis.zeroline = False
-    fig.layout.xaxis.minor.ticks = "inside"
-    fig.layout.xaxis.minor.ticklen = 2
     fig.layout.xaxis.minor.showgrid = True
-    fig.layout.xaxis.minor.gridcolor = "rgba(1, 1, 1, .05)"
-    fig.layout.yaxis.minor.ticks = "inside"
-    fig.layout.yaxis.minor.ticklen = 2
     fig.layout.yaxis.minor.showgrid = True
+    fig.layout.xaxis.minor.gridcolor = "rgba(1, 1, 1, .05)"
     fig.layout.yaxis.minor.gridcolor = "rgba(1, 1, 1, .05)"
-    fig.layout.title.font.size = 22
