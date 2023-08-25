@@ -11,7 +11,9 @@ Usage:
 import plotly.graph_objects as go
 
 
-def update_layout(fig: go.Figure, grid=True, constant_legend_itemsizing=False):
+def update_layout(
+    fig: go.Figure, grid=True, constant_legend_itemsizing=False, legend_out=False
+):
     """Enhance appearance of plotly figures by updating its layout.
 
     Parameters
@@ -44,7 +46,11 @@ def update_layout(fig: go.Figure, grid=True, constant_legend_itemsizing=False):
         fig.layout.legend.itemsizing = "constant"
 
     # Legend Position
-    fig.layout.legend.xanchor = "right"
+    if legend_out:
+        fig.layout.legend.xanchor = "left"
+    else:
+        fig.layout.legend.xanchor = "right"
+
     fig.layout.legend.x = 1
 
     # Set Margins
