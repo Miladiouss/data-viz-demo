@@ -1,7 +1,7 @@
 """Project: Plotly Scientific Plot Styling
 Version: 1.0
 Author: miladiouss
-Date: Aug 07, 2023
+Date: Aug 28, 2023
 Description: Enhance appearance of plotly figures to meet publication-quality standards.
 Usage:
   with open("plotly-style.yaml", "r") as stream:
@@ -27,11 +27,11 @@ def update_layout(
     fig.layout.legend.font.family = "monospace"
 
     # Set Font Size
-    fig.layout.font.size = 16
+    fig.layout.font.size = 18
     fig.layout.title.font.size = fig.layout.font.size
     fig.layout.xaxis.title.font.size = fig.layout.font.size
     fig.layout.yaxis.title.font.size = fig.layout.font.size
-    fig.layout.legend.font.size = fig.layout.font.size
+    fig.layout.legend.font.size = fig.layout.font.size - 3
 
     # Configure Plot Size
     fig.layout.width = 750
@@ -48,17 +48,18 @@ def update_layout(
     # Legend Position
     if legend_out:
         fig.layout.legend.xanchor = "left"
+        fig.layout.legend.x = 1.02
+
     else:
         fig.layout.legend.xanchor = "right"
-
-    fig.layout.legend.x = 1
+        fig.layout.legend.x = 1
 
     # Set Margins
     m = 75
     fig.layout.margin.t = m
     fig.layout.margin.b = m
-    fig.layout.margin.l = m
-    fig.layout.margin.r = m
+    fig.layout.margin.l = m + 25
+    fig.layout.margin.r = m + 25
     fig.layout.margin.pad = 0
 
     # Configure Axis Lines
@@ -102,10 +103,10 @@ def add_caption(fig, text="Figure 1. Example Data Visualization."):
         dict(
             xref="paper",
             yref="paper",
-            xanchor="left",
+            xanchor="center",
             yanchor="top",
             align="left",
-            x=0,
+            x=0.5,
             y=-0.175,
             showarrow=False,
             text=text,
