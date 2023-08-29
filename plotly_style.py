@@ -112,3 +112,9 @@ def add_caption(fig, text="Figure 1. Example Data Visualization."):
             font=dict(size=16),
         )
     )
+
+
+def web_friendly_display(fig):
+    from IPython.display import SVG
+
+    return SVG(fig.to_image(format="svg").decode("utf-8").replace("−", "-"))
